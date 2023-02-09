@@ -20,9 +20,9 @@ h1{
     background-color: rgb(13, 215, 20);
     margin: 35px;
 }
-h2.first{
-    color: aqua;
+.first h2{
+    color:red;
 }
-h2.second{
+.second h2{
     color: forestgreen;
 }
