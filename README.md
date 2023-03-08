@@ -1,1 +1,0 @@
-# statische_front-end
