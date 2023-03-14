@@ -1,0 +1,28 @@
+html{
+    background-color: brown;
+}
+body{
+    background-color: chocolate;
+    padding: 20px;
+    margin: 30px;
+}
+h1{
+    color: blue;
+    margin: 35px;
+}
+.first{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: blueviolet;
+    margin: 35px;
+}
+
+.second{
+    background-color: rgb(13, 215, 20);
+    margin: 35px;
+}
+.first h2{
+    color:red;
+}
+.second h2{
+    color: forestgreen;
+}

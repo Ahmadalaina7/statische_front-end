@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Horeca App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Stijl voor het menu */
+        .menu-item {
+            border: 1px solid black;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Horeca App</h1>
+    <h2>Menu</h2>
+    <div id="menu"></div>
+    <h2>Bestelling</h2>
+    <form id="order-form">
+        <label for="name">Naam:</label>
+        <input type="text" id="name" required>
+        <label for="item">Item:</label>
+        <select id="item" required>
+            <option value="" selected disabled>Kies een item</option>
+            <option value="Hamburger">Hamburger</option>
+            <option value="Pizza">Pizza</option>
+            <option value="Salade">Salade</option>
+        </select>
+        <label for="quantity">Aantal:</label>
+        <input type="number" id="quantity" min="1" required>
+        <button type="submit">Plaats bestelling</button>
+    </form>
+    <script>
+        // Menu-items
+        const menuItems = [
+            {
+                name: "Hamburger",
+                price: 5.99
+            },
+            {
+                name: "Pizza",
+                price: 7.99
+            },
+            {
+                name: "Salade",
+                price: 3.99
+            }
+        ];
+
+        // Voeg de menu-items toe aan de pagina
+        const menuElement = document.getElementById("menu");
+        menuItems.forEach(item => {
+            const menuItemElement = document.createElement("div");
+            menuItemElement.classList.add("menu-item");
+            menuItemElement.innerHTML = `
+                <h3>${item.name}</h3>
+                <p>Prijs: €${item.price.toFixed(2)}</p>
+            `;
+            menuElement.appendChild(menuItemElement);
+        });
+
+        // Bestelling plaatsen
+        const orderForm = document.getElementById("order-form");
+        orderForm.addEventListener("submit", event => {
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+            const item = document.getElementById("item").value;
+            const quantity = document.getElementById("quantity").value;
+            const menuItem = menuItems.find(menuItem => menuItem.name === item);
+            const totalPrice = menuItem.price * quantity;
+            alert(`Bestelling geplaatst: ${quantity} x ${item} voor €${totalPrice.toFixed(2)} door ${name}.`);
+            orderForm.reset();
+        });
+    </script>
+</body>
+
+</html>
