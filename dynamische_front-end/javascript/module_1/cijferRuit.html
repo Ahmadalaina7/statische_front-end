@@ -28,7 +28,7 @@
 
         for (let i = 0; i <= midden; i++) {
             for (let j = 0; j < midden - i; j++) {
-                output += '&nbsp;&nbsp;';
+                output += '&nbsp;&nbsp;'//staat voor "non-breaking space"//
             }
             for (let k = 0; k <= i; k++) {
                 output += fibonacci[k + 1] + '&nbsp;&nbsp;';
