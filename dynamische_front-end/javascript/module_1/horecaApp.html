@@ -46,6 +46,7 @@
             } else if (item === 'Fries') {
                 prijs = 2.50;
             }
+            console.dir(bestellingen);
             let gevondenItem = bestellingen.find((besteldItem) => besteldItem.item === item);
             if (gevondenItem) {
                 gevondenItem.aantal++;
@@ -58,8 +59,8 @@
         function updateBestellingen() {
             let bestellingHTML = '';
             let totaalPrijs = 0;
-            for (let i = 0; i < bestellingen.length; i++) {
-                let itemHTML = bestellingen[i].item;
+            for (let bestelling of bestellingen) {
+                let itemHTML = bestelling.item;
                 if (bestellingen[i].aantal > 1) {
                     itemHTML += ' x' + bestellingen[i].aantal;
                 }
@@ -73,7 +74,7 @@
 
         function printBon(totaalPrijs) {
             let bonHTML = '<p>Totaal: &euro; ' + totaalPrijs.toFixed(2) + '</p>';
-            for (let i = 0; i < bestellingen.length; i++) {
+            for (let i in bestellingen) {
                 let itemHTML = bestellingen[i].item;
                 if (bestellingen[i].aantal > 1) {
                     itemHTML += ' x' + bestellingen[i].aantal;
