@@ -1,0 +1,17 @@
+.container{
+    width: 600px;
+    height: 600px;
+    border: 1px solid black;
+    background-image: url("images/bg0.jpg");
+    background-size: 100%;
+    position: relative;
+}
+
+#myImage{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+input:disabled {
+    background-color: red;
+    }
