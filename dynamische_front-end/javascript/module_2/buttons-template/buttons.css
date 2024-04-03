@@ -1,17 +1,19 @@
-.container{
+#container {
+    background-image: url("images/bg0.jpg");
     width: 600px;
     height: 600px;
-    border: 1px solid black;
-    background-image: url("images/bg0.jpg");
-    background-size: 100%;
-    position: relative;
+    border: 2px solid black; 
+    position: relative; 
 }
 
-#myImage{
-    position: absolute;
-    bottom: 0;
+#img {
+    padding-top: 67%;
+    position: relative;
+    left: 0;
     right: 0;
+    float: right;
 }
-input:disabled {
-    background-color: red;
-    }
+
+button {
+    background-color: green;
+}
