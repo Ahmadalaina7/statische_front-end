@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dagen van de week</title>
+</head>
+<body>
+  <h2>Alle dagen van de week zijn:</h2>
+  <p id="alleDagen"></p>
+
+  <h2>De werkdagen zijn:</h2>
+  <p id="werkDagen"></p>
+
+  <h2>De weekenddagen zijn:</h2>
+  <p id="weekendDagen"></p>
+
+  <h2>Alle dagen van de week in omgekeerde volgorde zijn:</h2>
+  <p id="omgekeerdAlleDagen"></p>
+
+  <h2>De werkdagen in omgekeerde volgorde zijn:</h2>
+  <p id="omgekeerdWerkDagen"></p>
+
+  <h2>De weekenddagen in omgekeerde volgorde zijn:</h2>
+  <p id="omgekeerdWeekendDagen"></p>
+
+  <script>
+    // Array met dagen van de week
+    var dagen = ["maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag", "zondag"];
+
+    // Alle dagen van de week
+    document.getElementById("alleDagen").innerHTML = dagen.join(", ");
+
+    // De werkdagen
+    document.getElementById("werkDagen").innerHTML = dagen.slice(0, 5).join(", ");
+
+    // De weekenddagen
+    document.getElementById("weekendDagen").innerHTML = dagen.slice(5).join(", ");
+
+    // Alle dagen van de week in omgekeerde volgorde
+    document.getElementById("omgekeerdAlleDagen").innerHTML = dagen.slice().reverse().join(", ");
+
+    // De werkdagen in omgekeerde volgorde
+    document.getElementById("omgekeerdWerkDagen").innerHTML = dagen.slice(0, 5).reverse().join(", ");
+
+    // De weekenddagen in omgekeerde volgorde
+    document.getElementById("omgekeerdWeekendDagen").innerHTML = dagen.slice(5).reverse().join(", ");
+  </script>
+</body>
+</html>
