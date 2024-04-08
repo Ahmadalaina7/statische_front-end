@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Omgekeerde Volgorde</title>
+</head>
+<body>
+    <script>
+        let numberOfNames = prompt("Hoeveel namen wilt u in de array stoppen? (minimaal 3)");
+
+        while (isNaN(numberOfNames) || numberOfNames < 3) {
+            numberOfNames = prompt("Voer een geldig aantal in (minimaal 3):");
+        }
+
+        const names = [];
+
+        for (let i = 0; i < numberOfNames; i++) {
+            let name = prompt(`Voer naam ${i + 1} in:`);
+            names.push(name);
+        }
+
+        document.write("<h2>De ingevoerde namen in de array zijn:</h2>");
+        document.write("<ul>");
+
+        names.forEach(name => {
+            document.write(`<li>${name}</li>`);
+        });
+
+        document.write("</ul>");
+
+        document.write("<h2>De ingevoerde namen in de array in omgekeerde volgorde zijn:</h2>");
+        document.write("<ul>");
+
+        names.reverse().forEach(name => {
+            document.write(`<li>${name}</li>`);
+        });
+
+        document.write("</ul>");
+    </script>
+</body>
+</html>
