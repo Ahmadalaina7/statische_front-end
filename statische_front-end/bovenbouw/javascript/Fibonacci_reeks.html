@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Reeks</title>
+</head>
+<body>
+    <h1>Eerste 20 getallen van de Fibonacci-reeks:</h1>
+    <div id="fibonacciOutput"></div>
+
+    <script>
+        // Functie om de Fibonacci-reeks te berekenen
+        function fibonacci(n) {
+            var fib = [0, 1]; // Beginwaarden van de reeks
+
+            // Loop om de Fibonacci-reeks te berekenen
+            for (var i = 2; i < n; i++) {
+                fib.push(fib[i - 1] + fib[i - 2]);
+            }
+
+            return fib; // Return de berekende reeks
+        }
+
+        // Toon de eerste 20 getallen van de Fibonacci-reeks op het scherm
+        function displayFibonacci() {
+            var result = fibonacci(20); // Roep de functie fibonacci aan om de eerste 20 getallen te berekenen
+            var output = ""; // Variabele om de output op te slaan
+
+            // Loop om elk getal van de reeks in de output te plaatsen
+            for (var i = 0; i < result.length; i++) {
+                output += result[i] + "<br>"; // Voeg elk getal toe aan de output met een line-break
+            }
+
+            document.getElementById("fibonacciOutput").innerHTML = output; // Toon de output op het scherm
+        }
+
+        // Roep de functie aan om de Fibonacci-reeks te tonen wanneer het document geladen is
+        document.addEventListener("DOMContentLoaded", function () {
+            displayFibonacci();
+        });
+    </script>
+</body>
+</html>
