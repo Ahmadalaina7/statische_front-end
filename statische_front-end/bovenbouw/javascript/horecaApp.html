@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Horeca App</title>
+</head>
+
+<body>
+    <h1>Horeca App</h1>
+    <h2>Menu</h2>
+    <div id="menu">
+        <div class="menu-item" id="wijn">
+            <h3>Wijn</h3>
+            <p>Een heerlijk glas rode of witte wijn.</p>
+            <p>Prijs: &euro; 5,00</p>
+            <button onclick="bestel('wijn')">Bestel</button>
+        </div>
+        <div class="menu-item" id="bier">
+            <h3>Bier</h3>
+            <p>Een koud biertje, vers van de tap.</p>
+            <p>Prijs: &euro; 3,50</p>
+            <button onclick="bestel('bier')">Bestel</button>
+        </div>
+        <div class="menu-item" id="Fries">
+            <h3>Fries</h3>
+            <p>Heerlijke Fries.</p>
+            <p>Prijs: &euro; 2,50</p>
+            <button onclick="bestel('Fries')">Bestel</button>
+        </div>
+    </div>
+    <h2>Bestellingen</h2>
+    <ul id="bestellingen">
+    </ul>
+    <h2>Bon</h2>
+    <div id="bon">
+    </div>
+    <script>
+        let bestellingen = [];
+
+        function bestel(item) {
+            let prijs = 0;
+            if (item === 'wijn') {
+                prijs = 5.00;
+            } else if (item === 'bier') {
+                prijs = 3.50;
+            } else if (item === 'Fries') {
+                prijs = 2.50;
+            }
+            let gevondenItem = bestellingen.find((besteldItem) => besteldItem.item === item);
+            if (gevondenItem) {
+                gevondenItem.aantal++;
+            } else {
+                bestellingen.push({ item: item, prijs: prijs, aantal: 1 });
+            }
+            updateBestellingen();
+        }
+
+        function updateBestellingen() {
+            let bestellingHTML = '';
+            let totaalPrijs = 0;
+            for (let i = 0; i < bestellingen.length; i++) {
+                let itemHTML = bestellingen[i].item;
+                if (bestellingen[i].aantal > 1) {
+                    itemHTML += ' x' + bestellingen[i].aantal;
+                }
+                itemHTML += ' - &euro; ' + (bestellingen[i].prijs * bestellingen[i].aantal).toFixed(2);
+                bestellingHTML += '<li>' + itemHTML + '</li>';
+                totaalPrijs += bestellingen[i].prijs * bestellingen[i].aantal;
+            }
+            document.getElementById('bestellingen').innerHTML = bestellingHTML;
+            printBon(totaalPrijs);
+        }
+
+        function printBon(totaalPrijs) {
+            let bonHTML = '<p>Totaal: &euro; ' + totaalPrijs.toFixed(2) + '</p>';
+            for (let i = 0; i < bestellingen.length; i++) {
+                let itemHTML = bestellingen[i].item;
+                if (bestellingen[i].aantal > 1) {
+                    itemHTML += ' x' + bestellingen[i].aantal;
+                }
+                bonHTML += '<p>' + itemHTML + ' - &euro; ' + (bestellingen[i].prijs * bestellingen[i].aantal).toFixed(2) + '</p>';
+            }
+            document.getElementById('bon').innerHTML = bonHTML;
+        }
+    </script>
+</body>
+
+</html>

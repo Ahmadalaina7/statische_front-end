@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arrayEen = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    function Tafel2(arrayEen) {
+        let result2 = [];
+        for (let i = 0; i < arrayEen.length; i++) {
+            result2.push(arrayEen[i] * 2);
+        }
+        let output2 = document.createElement("p");
+        output2.innerHTML = "Tafel 2:<br>" + result2.map((value, index) => `${arrayEen[index]} * 2 = ${value}`).join("<br>");
+        document.body.insertBefore(output2, document.body.firstChild);
+    }
+    function Tafel4(arrayEen) {
+        let result2 = [];
+        for (let i = 0; i < arrayEen.length; i++) {
+            result2.push(arrayEen[i] * 4);
+        }
+        let output2 = document.createElement("p");
+        output2.innerHTML = "Tafel 4:<br>" + result2.map((value, index) => `${arrayEen[index]} * 4 = ${value}`).join("<br>");
+        document.body.insertBefore(output2, document.body.firstChild);
+    }
+    function Tafel6(arrayEen) {
+        let result2 = [];
+        for (let i = 0; i < arrayEen.length; i++) {
+            result2.push(arrayEen[i] * 6);
+        }
+        let output2 = document.createElement("p");
+        output2.innerHTML = "Tafel 6:<br>" + result2.map((value, index) => `${arrayEen[index]} * 6 = ${value}`).join("<br>");
+        document.body.insertBefore(output2, document.body.firstChild);
+    }
+    function Tafel8(arrayEen) {
+        let result2 = [];
+        for (let i = 0; i < arrayEen.length; i++) {
+            result2.push(arrayEen[i] * 8);
+        }
+        let output2 = document.createElement("p");
+        output2.innerHTML = "Tafel 8:<br>" + result2.map((value, index) => `${arrayEen[index]} * 8 = ${value}`).join("<br>");
+        document.body.insertBefore(output2, document.body.firstChild);
+    }
+
+
+  
+    Tafel8(arrayEen);
+    Tafel6(arrayEen);
+    Tafel4(arrayEen);
+    Tafel2(arrayEen);
+  
+</script>
+
+</body>
+
+</html>

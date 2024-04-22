@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Prompt the user to enter a number
+        let vraag = prompt("Vul een getal in?");
+
+        // Check if the entered number is 20
+        if (vraag == 20) {
+            // Define the function to print the pyramid
+            function printPyramid(n) {
+                // Loop through each row of the pyramid
+                for (let i = 1; i <= n; i++) {
+                    // Initialize an empty string to hold the current row
+                    let str = '';
+
+                    // Loop through each column of the current row
+                    for (let j = 1; j <= i; j++) {
+                        // Add the current number to the string
+                        str += j + ' ';
+                    }
+
+                    // Remove any trailing whitespace from the string
+                    // and print the current row
+                    document.write(str.trim() + '<br>');
+                }
+            }
+
+            // Call the function with the number 20
+            printPyramid(20);
+        }
+        // If the entered number is not 20, show an alert
+        else {
+            alert('Geen geldig getal ingevoerd');
+        }
+    </script>
+</body>
+
+</html>

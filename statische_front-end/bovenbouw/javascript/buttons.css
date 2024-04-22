@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+    background-color: gray;
+}
+
+#container {
+    display: flex;
+    flex-direction: row; /* changed to "row" */
+    background-color: white;
+    padding: 20px;
+    border: 10px solid gray;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.button {
+    width: 100px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px; /* added margin-right property */
+}
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}

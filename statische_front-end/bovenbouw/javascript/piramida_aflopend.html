@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let vraag = prompt("Vul een getal in?");
+        if (vraag == 20) {
+            function printPyramid(n) {
+                for (let i = n; i >= 1; i--) {
+                    let str = '';
+                    for (let j = 1; j <= i; j++) {
+                        str += j + ' ';
+                    }
+                    document.write(str.trim() + '<br>');
+                }
+            }
+
+            printPyramid(20);
+        }
+        else {
+            alert('Geen geldig getal ingevoerd');
+        }
+    </script>
+</body>
+
+</html>

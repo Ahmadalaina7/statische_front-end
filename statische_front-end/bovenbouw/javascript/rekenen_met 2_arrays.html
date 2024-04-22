@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arrayEen = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        var arrayTwee = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20];
+        function optellen(arrayEen, arrayTwee) {
+        let result = [];
+        for (let i = 0; i < arrayEen.length; i++) {
+            result.push(arrayEen[i] + arrayTwee[i]);
+        }
+        let output = document.createElement("p");
+        output.innerHTML = "Optellen:<br>" + result.map((value, index) => `${arrayEen[index]} + ${arrayTwee[index]} = ${value}`).join("<br>");
+        document.body.insertBefore(output, document.body.firstChild);
+    }
+
+    optellen(arrayEen, arrayTwee);
+
+    function aftrekken(arrayEen, arrayTwee){
+        let result1 = [];
+        for (let i = 0; i < arrayEen.length; i++) {
+            result1.push(arrayTwee[i] - arrayEen[i]);
+        }
+        let output1 = document.createElement("p");
+        output1.innerHTML = "Aftrekken:<br>" + result1.map((value, index) => `${arrayTwee[index]} - ${arrayEen[index]} = ${value}`).join("<br>");
+        document.body.insertBefore(output1, document.body.firstChild);
+    }
+
+    function vermenigvuldigen(arrayEen, arrayTwee) {
+        let result2 = [];
+        for (let i = 0; i < arrayEen.length; i++) {
+            result2.push(arrayEen[i] * arrayTwee[i]);
+        }
+        let output2 = document.createElement("p");
+        output2.innerHTML = "Vermenigvuldigen:<br>" + result2.map((value, index) => `${arrayEen[index]} * ${arrayTwee[index]} = ${value}`).join("<br>");
+        document.body.insertBefore(output2, document.body.firstChild);
+    }
+
+    function delen(arrayEen, arrayTwee) {
+        let result3 = [];
+        for (let i = 0; i < arrayEen.length; i++) {
+            result3.push(arrayTwee[i] / arrayEen[i]);
+        }
+        let output3 = document.createElement("p");
+        output3.innerHTML = "Delen:<br>" + result3.map((value, index) => `${arrayTwee[index]} / ${arrayEen[index]} = ${value}`).join("<br>");
+        document.body.insertBefore(output3, document.body.firstChild);
+    }
+
+    aftrekken(arrayEen, arrayTwee);
+    vermenigvuldigen(arrayEen, arrayTwee);
+    delen(arrayEen, arrayTwee);
+</script>
+
+</body>
+
+</html>
