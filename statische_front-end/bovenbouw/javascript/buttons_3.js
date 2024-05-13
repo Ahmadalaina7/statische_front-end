@@ -4,7 +4,7 @@ const container = document.getElementById('container');
 const buttons = [];
 const clickCounts = [];
 
-const colors = ['green', 'red','black']; // Array met gewenste kleuren
+const colors = ['green', 'red','purple','blue','black']; // Array met gewenste kleuren
 
 for (let i = 0; i < aantalButtons; i++) {
   const button = document.createElement('button');
